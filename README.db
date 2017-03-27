@@ -1,0 +1,10 @@
+# lesson3
+lesson3(16)_Mia
+
+create table people(id integer primary key autoincrement, name string);
+insert into people(name) values("Mia");
+insert into people(name) values("Yam");
+insert into people(name) values("Noy");
+update last_insert_rowid() set name = "Ron";
+
+
