@@ -1,0 +1,27 @@
+bool carPurchase(int buyerid, int carid, sqlite3* db, char* zErrMsg)
+{
+  bool returnValue = false;
+  Select * from accounts where Buyer_id == buyerid, balance;
+  Select * from cars where id == carid, price;
+  if(balance > price)
+  {
+    update cars where id == carid set available=0;
+    update accounts Buyer_id == buyerid, set balance -= price;
+    returnValue = true;
+  }
+  return returnValue;
+}
+
+bool balanceTransfer(int from, int to, int amount, sqlite3* db, char* zErrMsg)
+{
+  select from accounts where id==from,balance;
+  if(balance > amount)
+    update balance -= amount;
+   else 
+    return false
+  select from accounts where id==to, update balance += amount;
+  return true;
+}
+
+
+
